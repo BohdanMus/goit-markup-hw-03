@@ -23,6 +23,8 @@ address {
 }
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -42,7 +44,6 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  outline: 2px solid red;
 }
 .section {
   padding-top: 94px; padding-bottom: 94px;
@@ -64,9 +65,32 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: #000000;
+  margin-right: 93px;
 }
 /* HEADER */
-.header {padding-top: 32px; padding-bottom: 32px;}
+.header {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #ECECEC;
+  margin: 0 auto;
+}
+.site-nav {
+  display: flex;
+  gap: 50px;
+}
+.header-navigation {
+  display: flex;
+  align-items: center;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+}
+.contact-header {
+  display: flex;
+  margin-left: auto;
+  gap: 50px;
+}
 .nav-link {
 font-weight: 500;
 font-size: 14px;
@@ -93,9 +117,12 @@ color: var(--main-accent-color);
 }
 
 /* ГЕРОЙ */
-.section-hero {background-color: #2F303A;
-  padding-top: 200px;
-  padding-bottom: 210px;
+.section-hero {
+  width: 1600px;
+  height: 600px;
+  background-color: #2F303A;
+  margin: 0 auto;
+  display: flex;
 }
 .visually-hidden {
     position: absolute;
@@ -109,6 +136,12 @@ color: var(--main-accent-color);
     clip-path: inset(50%);
     margin: -1px;
 }
+.hero-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 .hero-title {
   font-weight: 900;
   font-size: 44px;
@@ -117,29 +150,28 @@ color: var(--main-accent-color);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--main-background-color);
-  width: 696px;
-  margin: 0 auto;
+  margin-bottom: 30px;
 }
 .hero-button {
+min-width: 216px;
+height: 50px;
 font-family: 'Roboto';
 font-weight: 700;
 font-size: 16px;
 line-height: 1.88;
-display: flex;
-align-items: center;
 text-align: center;
 letter-spacing: 0.06em;
 color: var(--main-background-color);
 background-color: var(--main-accent-color);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 border-radius: 4px;
-margin: 0 auto;
-margin-top: 40px;
-
 }
 
 /* FEATURE */
-
+.feature-list {
+  display: flex;
+  gap: 30px;
+}
 .feature-title {
 font-weight: 700;
 font-size: 14px;
@@ -169,6 +201,10 @@ letter-spacing: 0.03em;
 color: var(--main-title-color);
 margin-bottom: 50px;
 }
+.examples-list {
+  display: flex;
+  gap: 30px;
+}
 
 /* TEAM */
 .section-team {
@@ -183,15 +219,19 @@ letter-spacing: 0.03em;
 color: var(--main-title-color);
 margin-bottom: 50px;
 }
+.team-list{
+  display: flex;
+  gap: 30px;
+}
 .team-item {
-  width: 270px;
-  height: 368px;
-  display: block;
+  width: calc((100% - 90px)/4);
   background-color: var(--main-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .team-wrap {
   padding-top: 30px;
-  padding-bottom: 30px;
+  
 }
 .team-name {
 font-weight: 500;
@@ -202,6 +242,7 @@ letter-spacing: 0.03em;
 color: var(--main-title-color);
 padding-bottom: 10px;
 display: block;
+
 }
 .team-text {
 font-size: 16px;
@@ -210,6 +251,7 @@ text-align: center;
 letter-spacing: 0.03em;
 color: var(--main-text-color);
 display: block;
+padding-bottom: 30px;
 }
 /* FOOTER */
 .footer {
@@ -269,7 +311,7 @@ color: rgba(255, 255, 255, 0.6);
 
 /* PORTFOLIO */
 .section-portfolio {
-  background-color: #F5F5F5;
+  background-color: var(--main-background-color);
 }
 
 .filter-button {
@@ -282,23 +324,29 @@ letter-spacing: 0.03em;
 color: var(--main-title-color);
 background-color: var(--second-background-color);
 border-radius: 4px;
+margin-right: 8px;
 }
 .filter-button:hover, .filter-button:focus {background-color: var(--main-accent-color); color: var(--main-background-color);}
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 
-.portfolio-item {
-  width: 370px;
-  height: 404px;
-  background-color: var(--main-background-color);
-  display: block;
-  border: 1px solid #EEEEEE;
-  margin-bottom: 30px;
 }
+.portfolio-item {
+  width: calc((100% - 60px)/3);
+}
+
 .portfolio-wrap {
-padding-top: 20px;
-padding-bottom: 20px;  
+padding: 20px 24px;
+background-color: var(--main-background-color);
+display: block;
+border: 1px solid #EEEEEE;  
 }
 .filter-list {
-  margin-bottom: 56px;
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: center;
 }
 .portfolio-title {
 font-weight: 700;
